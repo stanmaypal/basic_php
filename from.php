@@ -34,6 +34,7 @@
         <th>Name</th>
         <th>Father's Name</th>
         <th>Phone</th>
+        <th>Action</th>
       </tr>
 <?php
 include "db.php";
@@ -49,6 +50,10 @@ if (mysqli_num_rows($result) > 0) {
       <td> <?php echo $row['name']; ?></td>   
       <td> <?php echo $row['fname']; ?></td>   
       <td> <?php echo $row['phone']; ?></td> 
+            <td>
+        <a href="delete.php?delid=<?php echo($row['id']);?>" class="btn btn-danger">Delete</a>  
+        <a href="update.php?upid=<?php echo($row['id']);?>" class="btn btn-success">Update</a>  
+      </td>
       </tr>  
 
 
